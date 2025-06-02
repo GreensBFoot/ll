@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://cf0jyxhtel6ye"]
+
+[ext_resource type="Script" uid="uid://datlq5t4gyxel" path="res://node_2d.gd" id="1_pxdej"]
+[ext_resource type="Texture2D" uid="uid://bxege5rb2836m" path="res://a/Sprite-0004.png" id="2_127bl"]
+[ext_resource type="FontFile" uid="uid://cvlia8bvdhhu" path="res://a/HomeVideo-BLG6G.ttf" id="3_jl02o"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_pxdej")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-996.625, -127)
+scale = Vector2(5.24875, 1.48)
+texture = ExtResource("2_127bl")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(1, 0.71)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -520.0
+offset_top = -219.0
+offset_right = 560.0
+offset_bottom = 54.0
+theme_override_fonts/font = ExtResource("3_jl02o")
+theme_override_font_sizes/font_size = 150
+text = "Player 1 has
+    won"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(0.391522, 0.997369, 0, 1)
+offset_left = -210.0
+offset_top = 162.0
+offset_right = 184.0
+offset_bottom = 277.0
+theme_override_fonts/font = ExtResource("3_jl02o")
+theme_override_font_sizes/font_size = 38
+text = "RESTART"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
