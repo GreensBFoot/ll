@@ -1,5 +1,6 @@
 extends Node2D
 
+
 var a
 @onready var label: Label = $Label
 @onready var button: Button = $Button

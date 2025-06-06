@@ -1,0 +1,83 @@
+[gd_scene load_steps=5 format=3 uid="uid://b87ujlxtiaolh"]
+
+[ext_resource type="Texture2D" uid="uid://blqwollaultq8" path="res://23rr.jpeg" id="1_0upde"]
+[ext_resource type="FontFile" uid="uid://cvlia8bvdhhu" path="res://a/HomeVideo-BLG6G.ttf" id="2_njwm4"]
+
+[sub_resource type="GDScript" id="GDScript_1asri"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://node_2d.tscn\") # Replace with function body.
+
+
+func _on_button_2_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://node_2d55.tscn\") # Replace with function body.
+"
+
+[sub_resource type="GDScript" id="GDScript_sy021"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="Node2D" type="Node2D"]
+script = SubResource("GDScript_1asri")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(578, 302)
+scale = Vector2(0.999768, 1.07349)
+texture = ExtResource("1_0upde")
+
+[node name="Camera2D" type="Camera2D" parent="Sprite2D"]
+scale = Vector2(1.05442, 1.1137)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 186.0
+offset_top = 4.0
+offset_right = 1146.0
+offset_bottom = 364.0
+scale = Vector2(0.773518, 0.779937)
+theme_override_fonts/font = ExtResource("2_njwm4")
+theme_override_font_sizes/font_size = 400
+text = "PONG"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 454.0
+offset_top = 342.0
+offset_right = 714.0
+offset_bottom = 404.0
+theme_override_fonts/font = ExtResource("2_njwm4")
+theme_override_font_sizes/font_size = 60
+text = "1P V 2P"
+script = SubResource("GDScript_sy021")
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 439.0
+offset_top = 453.0
+offset_right = 735.0
+offset_bottom = 515.0
+theme_override_fonts/font = ExtResource("2_njwm4")
+theme_override_font_sizes/font_size = 60
+text = "1P V CPU"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
